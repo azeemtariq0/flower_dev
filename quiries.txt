@@ -1,0 +1,34 @@
+ALTER TABLE `construction`.`as_unit_owners`   
+  ADD COLUMN `current_tenant` VARCHAR(255) NULL AFTER `owner_email`;
+
+
+ALTER TABLE `construction`.`as_units`   
+  DROP COLUMN `current_owner`, 
+  DROP COLUMN `current_tenant`;
+
+ALTER TABLE `construction`.`as_projects`   
+  CHANGE `union_voice_president` `union_vice_president` VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci NULL;
+
+ALTER TABLE `construction`.`as_unit_owners`   
+  ADD COLUMN `current_tenant` VARCHAR(255) NULL AFTER `owner_email`;
+
+ALTER TABLE `construction`.`as_unit_owners`   
+  ADD COLUMN `identity_type` VARCHAR(255) NULL AFTER `owner_name`;
+
+
+CREATE TABLE `construction`.`as_receipt`(  
+  `project_id` INT(11),
+  `block_id` INT(11),
+  `unit_id` INT(11),
+  `description` VARCHAR(255),
+  `date` VARCHAR(255),
+  `recieveable` VARCHAR(255),
+  `status` INT(11) DEFAULT 0
+);
+
+
+
+
+
+apni soceity  ----> Project Name
+

@@ -110,13 +110,13 @@
                     
                 </ul>
                 <!--  -->
-                <ul class="list-group list-3">
+              <!--   <ul class="list-group list-3">
                     <li class="list-group-item">SIZE OPTIONS</li>
                     <li class="list-group-item list-item-3"><a href="#">L</a><span>(15)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">M</a><span>(09)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">S</a><span>(12)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">XL</a><span>(16)</span></li>
-                </ul>
+                </ul> -->
                 <!--  -->
                 <ul class="list-group list-4">
                     <li class="list-group-item">
@@ -133,21 +133,21 @@
                     </li>
                 </ul>
                 <!--  -->
-                <ul class="list-group list-3">
+                <!-- <ul class="list-group list-3">
                     <li class="list-group-item">MANUFATURER</li>
                     <li class="list-group-item list-item-3"><a href="#">Consequat</a><span>(15)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">Fermentum</a><span>(09)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">Pellentestque</a><span>(12)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">Sollicitudinl</a><span>(16)</span></li>
-                </ul>
+                </ul> -->
                 <!--  -->
-                <ul class="list-group list-3">
+                <!-- <ul class="list-group list-3">
                     <li class="list-group-item">SUBCATEGORY</li>
                     <li class="list-group-item list-item-3"><a href="#">Gifts</a><span>(20)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">Chocolates</a><span>(07)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">Card</a><span>(30)</span></li>
                     <li class="list-group-item list-item-3"><a href="#">Candy</a><span>(18)</span></li>
-                </ul>
+                </ul> -->
             </div>
         </div>
 

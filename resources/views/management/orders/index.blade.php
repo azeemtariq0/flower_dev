@@ -56,7 +56,51 @@
               <!-- /PANEL -->
 
             </div>
+
+
+
+
+          <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <form id="form1" method="post">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Order Detail</h4>
+      </div>
+      <div class="modal-body">
+
+
+       <table class="table table-striped table-bordered table-hover table-responsive">
+                    <thead>
+                      <tr>
+                        <th>Product Name</th>
+                        <th>Quantity </th>
+                        <th>Price </th>
+                        <th>Total Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody id="detail">
+                    </tbody>
+                  </table>            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    </form>
+
+  </div>
+</div>
+
           @endsection
+
+
+
+
+
 
           @section('pagelevelscript')
           <script type="text/javascript">
@@ -87,6 +131,38 @@
                 {data: 'action', description: 'action', orderable: false, searchable: false},
                 ]
               });
+
+             }
+
+
+             function orderDetail($id) {
+              var $id = $id;
+              if($id){
+                $.ajax({
+                 url:'{{ url("admin/get-order-detail")}}',
+                 headers: {'X-CSRF-TOKEN': "{{ csrf_token() }}"},
+                 type:'POST',
+                 dataType:'json',
+                 data:{'id':$id},
+                 success:function(res){
+                  var $html = "";
+
+
+                  // JSON.parse((res)_;
+                   $.each(res.data,function(i,val) {
+                     $html+="<tr>";
+                     $html+="<td>"+val.product.product_name+"</td>";
+                     $html+="<td>"+val.ItemQty+"</td>";
+                     $html+="<td>200</td>";
+                     $html+="<td>400</td>";
+                     $html+="</tr>";
+                   })
+                   $('#detail').html($html);
+                   $('#myModal').modal('show');
+                 }
+              });
+              }
+
 
              }
           </script>

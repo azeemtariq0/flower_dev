@@ -41,7 +41,9 @@
                             @endcan
                            
                              <li class="{{ in_array(\Request::segment(2),array(
+                             'colors',
                              'products',
+                              'product-sub-categories',
                               'product-categories',
                               )) ? 'active' : '' }}">
                                 <a href="#">
@@ -51,7 +53,9 @@
                                 <ul><!-- submenus -->
                                    
                            
-                                      
+                                      <li class="{{ \Request::segment(2) == 'colors' ? 'active' : '' }}">
+                                        <a href="{{ route('colors.index') }}">Color</a></li>
+
                                       <li class="{{ \Request::segment(2) == 'product-categories' ? 'active' : '' }}">
                                         <a href="{{ route('product-categories.index') }}">Product Category</a></li>
 

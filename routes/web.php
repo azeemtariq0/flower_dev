@@ -82,8 +82,14 @@ Route::middleware(['auth', 'AdminRoutes'])
         Route::resource('admin/order-confirm', App\Http\Controllers\Management\OrderController::class);
         Route::resource('admin/order-dispatch', App\Http\Controllers\Management\OrderController::class);
         Route::resource('admin/order-delivered', App\Http\Controllers\Management\OrderController::class);
-    });
+        Route::post('admin/get-order-detail',[App\Http\Controllers\Management\OrderController::class, 'getOrderDetail']);
 
+        // Colors
+        Route::resource('admin/colors', App\Http\Controllers\Management\ColorController::class);
+
+
+        });
+  
 
 
 //   Route::group([

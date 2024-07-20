@@ -118,6 +118,23 @@
 
                                     </div>
                                 </div>
+                                 <div class="row">
+                                  <div class="form-group">
+                                        <div class="col-md-10 col-sm-10">
+                                            <label>Color </label>
+                                            <select class=" form-control select2" multiple {{$isView}} id="color_id"  required name="color_id[]">
+                                            <option value="">Selec an option</option>
+                                            @foreach($colors as $value)
+                                              @php  $list = (@$product->color_id) ? explode(',',$product->color_id) : []   @endphp
+                                               <option  {{ in_array($value->id,$list) ? 'selected' : '' }} value="{{ $value->id}}">{{ $value->color_name}}</option>
+                                               @endforeach
+                                           </select>
+
+                                           <label id="color_id-error" class="error mt-2 text-danger" for="color_id" style="display: none"></label>
+                                        </div>
+
+                                    </div>
+                                </div>
 
                                 <div class="row">
                                     <div class="form-group">
@@ -132,6 +149,8 @@
                             </div>
 
                              <div class="col-md-6">
+                                
+
 
                                 <div class="panel-body">
 

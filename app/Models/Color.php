@@ -15,7 +15,7 @@ class Color extends Model
      *  
      * @var array
      */
-    protected $fillable = ['*'];
+    protected $fillable = ['color_name','color_code','description','created_by','created_at'];
 
 
      

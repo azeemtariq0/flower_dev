@@ -65,7 +65,7 @@ CREATE TABLE `currencies` (
   `country_id` VARCHAR(255)  DEFAULT NULL,
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Dumping data for table `currencies`
@@ -90,7 +90,7 @@ CREATE TABLE `destination_themes` (
   `faqs` VARCHAR(255)  DEFAULT NULL,
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Dumping data for table `destination_themes`
@@ -121,7 +121,7 @@ CREATE TABLE `failed_jobs` (
   `payload` LONGTEXT  NOT NULL,
   `exception` LONGTEXT  NOT NULL,
   `failed_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -137,7 +137,7 @@ CREATE TABLE `languages` (
   `bydefault` VARCHAR(255)  DEFAULT NULL,
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Dumping data for table `languages`
@@ -158,7 +158,7 @@ CREATE TABLE `migrations` (
   `id` INT(10) UNSIGNED NOT NULL,
   `migration` VARCHAR(191)  NOT NULL,
   `batch` INT(11) NOT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Dumping data for table `migrations`
@@ -242,7 +242,7 @@ CREATE TABLE `oauth_access_tokens` (
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL,
   `expires_at` DATETIME DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `oauth_access_tokens`
@@ -266,7 +266,7 @@ CREATE TABLE `oauth_auth_codes` (
   `scopes` TEXT ,
   `revoked` TINYINT(1) NOT NULL,
   `expires_at` DATETIME DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -286,7 +286,7 @@ CREATE TABLE `oauth_clients` (
   `revoked` TINYINT(1) NOT NULL,
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 --
 -- Dumping data for table `oauth_clients`
@@ -309,7 +309,7 @@ CREATE TABLE `oauth_personal_access_clients` (
   `client_id` BIGINT(20) UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NULL DEFAULT NULL,
   `updated_at` TIMESTAMP NULL DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ;
 
 --
 -- Dumping data for table `oauth_personal_access_clients`
@@ -330,7 +330,7 @@ CREATE TABLE `oauth_refresh_tokens` (
   `access_token_id` VARCHAR(100)  NOT NULL,
   `revoked` TINYINT(1) NOT NULL,
   `expires_at` DATETIME DEFAULT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -686,6 +686,23 @@ INSERT INTO `users` (`id`, `soceity_id`, `project_id`, `block_id`, `name`, `emai
 (39, 1, 3, NULL, 'Muhammad Azeem', 'azeem@gmail.com', NULL, NULL, NULL, '$2y$10$KokDyf6rLWMWGv1t3FEvGuTGjxOvQ0DNk6ZwqU26hfhe0VpUPms9q', NULL, NULL, '2024-01-18 15:59:57', '2024-01-18 15:59:57', NULL, NULL),
 (40, 1, 3, 7, '2serty', 'admin4454@gmail.com', NULL, NULL, NULL, '$2y$10$0GqgW5ORbVrIFbV5bFfUy./yaPeBLvOVir3lPADrtMXG5LpqywDLq', NULL, NULL, '2024-02-06 19:07:52', '2024-02-06 19:08:02', '2024-02-06 19:08:02', NULL);
 
+
+
+
+
+CREATE TABLE `colors` (  
+  `id` INT NOT NULL,
+  `color_name` VARCHAR(255),
+  `color_code` VARCHAR(255),
+  `description` VARCHAR(255),
+  `created_at` DATETIME NOT NULL,
+  `created_by` VARCHAR(255),
+  `updated_at` DATETIME,
+  `updated_by` VARCHAR(255),
+  PRIMARY KEY (`id`)
+);
+
+
 --
 -- Indexes for dumped tables
 --
@@ -961,3 +978,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+ALTER TABLE `products`   
+  ADD COLUMN `color_id` VARCHAR(255) NULL AFTER `sell_price`;

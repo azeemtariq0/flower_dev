@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\ProductDetail;
 use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
+use App\Models\Color;
 use Illuminate\Http\Request;
 use DB;
 use DataTables, Form;
@@ -73,6 +74,7 @@ class ProductController extends Controller
     {
         // $language = DefaultLanguage::SelectedLanguage();
          $categories  = ProductCategory::all();
+         $colors  = Color::all();
          $data['page_management'] = array(
             'page_title' => 'Product',
             'slug' => 'General Setup',
@@ -81,7 +83,7 @@ class ProductController extends Controller
             'url' => 'Add Product',
         );
 
-        return view('management/products/create', compact('categories','data'));
+        return view('management/products/create', compact('categories','colors','data'));
     }
 
     /**
@@ -101,6 +103,7 @@ class ProductController extends Controller
                 'sell_price' => $request->sell_price,
                 'product_category_id' => $request->product_category_id,
                 'product_sub_category_id' => $request->product_sub_category_id,
+                'color_id' => (!empty($request->color_id) ? implode(',', $request->color_id) : ""),
                 'description' => $request->description,
                 'created_at' => date('Y-m-d H:i:s'),
                 'created_by' => auth()->user()->id,
@@ -161,6 +164,7 @@ class ProductController extends Controller
     function edit($id)
     {
          $categories  = ProductCategory::all();
+         $colors  = Color::all();
          $product  = Product::where('id',$id)->with('product_detail')->first();
 
          
@@ -172,7 +176,7 @@ class ProductController extends Controller
             'add' => 'Edit Product',
         );
 
-        return view('management/products/create', compact('product','categories','data'));
+        return view('management/products/create', compact('product','colors','categories','data'));
     }
 
     /**
@@ -186,12 +190,14 @@ class ProductController extends Controller
    
      function update(Request $request, $id)
     {
+
         $product = Product::where('id',$id)->first();
          $product->product_category_id = $request->product_category_id;
          $product->product_sub_category_id = $request->product_sub_category_id;
          $product->product_code = $request->product_code;
          $product->product_name = $request->product_name;
          $product->sell_price = $request->sell_price;
+         $product->color_id = (!empty($request->color_id) ? implode(',', $request->color_id) : "");
          $product->description = $request->description;
          $product->updated_at =  date('Y-m-d H:i:s');
          $product->updated_by = auth()->user()->id;

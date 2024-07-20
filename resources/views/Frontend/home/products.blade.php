@@ -215,7 +215,7 @@
   /* centers the loading animation horizontally one the screen */
   top: 50%;
   /* centers the loading animation vertically one the screen */
-  background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+  background-image: url('{{ asset('flower/img/loader.gif')}}');
   /* path to your loading animation */
   background-repeat: no-repeat;
   background-position: center;

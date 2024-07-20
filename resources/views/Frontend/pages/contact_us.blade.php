@@ -14,56 +14,10 @@
                             </div>
                             
 </div>
-	<div class="banner">
-		<div class="container">
-			<figure id="banner-about"><a href="#"><img src="{{ asset('flower/img/1350x500.png')}}" class="img-responsive" alt="img-holiwood"></a></figure>
-		<div class="title-banner">
-			<h1>Contact Us</h1>
-			<p>It is a long established fact that a reader will<br>be distracted by the readable content of a page when looking at its layout</p>
-		</div>
-		</div>
-		
-	</div>
-<div class="img-link">
+<div class="message" style="margin-top: 150px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<div class="img-color-1">
-					<div class="img-content">
-					<img src="{{ asset('flower/img/50x70.png')}}" class="img-responsive" alt="img-holiwood">
-					</div>
-				<h1>Our Address</h1>
-				<h2>123 canberra Street, NewYork, USA.</h2>
-				</div>
-				
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-				<div class="img-color-2">
-					<div class="img-content">
-					<img src="{{ asset('flower/img/62x61.png')}}" class="img-responsive" alt="img-holiwood">
-				</div>
-				<h1>Phone Number</h1>
-				<h2>Office: (800) 123 456 789</h2>
-				</div>
-				
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-				<div class="img-color-3">
-					<div class="img-content">
-					<img src="{{ asset('flower/img/77x60.png')}}" class="img-responsive" alt="img-holiwood">
-				</div>
-				<h1>Email Address</h1>
-				<h2>Contact@Jenstore.org</h2>
-				</div>
-				
-			</div>
-
-		</div>
-	</div>
-</div>
-<div class="message">
-	<div class="container">
-		<div class="row">
+		<h1 class="text-well message-contact">Contact Us</h1><br>
 			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 				<figure id="img-contact"><a href="#"><img src="{{ asset('flower/img/550x450.png')}}" class="img-responsive" alt="img-holiwood"></a></figure>
 			</div>
@@ -90,67 +44,9 @@
 		</div>
 	</div>
 </div>
-<div id="map">
+<div id="map" style="display:none;">
 	
 </div>
-<div class="info-footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h3>About</h3>
-					<ul>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">News & Stories</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">History</a> </li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Our Studio</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Shop</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Stockists</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h3>Customer sevices</h3>
-					<ul>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Contact Us</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Trade Services</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Login/Register</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Delivery & Returns</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">FAQs</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h3>Store</h3>
-					<ul>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Shop</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Wedding</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Birthday</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Women's day</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h3>Shop collection</h3>
-					<ul>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">New Arrivals</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Hot</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Sale</a></li>
-						<li><i class="fas fa-long-arrow-alt-right"></i><a href="#">Deal of the day</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 social">
-				<p>CONNECT WITH US:</p>
-				<a href="#" id="link-insta"></a>
-				<a href="#" id="link-fb"></a>
-				<a href="#" id="link-tw"></a>
-				<a href="#" id="link-sky"></a>
-				<h1>Newsletter</h1>
-				<h2>Sign up for our mailing list to get latest updates and offers</h2>
-				<form class="form-group" action="mail" method="post">
-					<input type="text" name="input-mail" placeholder="Your mail here" class="input-lg">
-					<button type="submit"><img src="{{ asset('flower/img/Send.png')}}" alt="img-holiwood"></button>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+
 </main>
 @endsection

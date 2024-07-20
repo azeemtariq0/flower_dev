@@ -332,7 +332,6 @@
     
     
     <script src="{{ asset('flower/js/function-show-sidebar.js') }}"></script>
-    <script src="{{ asset('flower/js/function-map.js') }}"></script>
     <script src="{{ asset('flower/js/function-shop.js') }}"></script>
     <script src="{{ asset('flower/js/function-range.js') }}"></script>
     <script src="{{ asset('flower/js/function-select-custom.js') }}"></script>
@@ -360,7 +359,6 @@
 <script src="{{ asset('flower/js/function-scroll.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnMr64OtHBrpxBLLbYX2K2Waf4enq8sp0&callback"></script>
 
    
  
@@ -471,6 +469,7 @@ function getresult(url) {
         var res= JSON.parse(data);
         $("#pagination-result").html(res.pagination); 
         $("#product_list").html(res.result);
+	 $('#subCateWise').focus();
         // setInterval(function() {$("#overlay").hide(); },500);
         },
         error: function() 
@@ -538,7 +537,7 @@ $(document).on('submit','#checkout_post',function(e) {
    e.preventDefault();
 });
 
-if($("#pagination-result").length){
+if($("#pagination-result").length){ 
  getresult("{{ url('/get-product') }}");
 }
 

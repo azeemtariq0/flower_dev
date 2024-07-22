@@ -324,3 +324,4 @@ CREATE TABLE `order_detail` (
 );
 
 
+ALTER TABLE `order_detail` ADD COLUMN `price` VARCHAR(255) NULL AFTER `ItemQty`;

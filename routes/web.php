@@ -76,19 +76,15 @@ Route::middleware(['auth', 'AdminRoutes'])
         Route::resource('admin/product-sub-categories', ProductSubCategoryController::class);
         Route::resource('admin/products', ProductController::class);
         Route::post('admin/get-sub-category', [ProductController::class, 'getSubCategory']);
-
-
         Route::resource('admin/orders',  App\Http\Controllers\Management\OrderController::class);
         Route::resource('admin/order-confirm', App\Http\Controllers\Management\OrderController::class);
         Route::resource('admin/order-dispatch', App\Http\Controllers\Management\OrderController::class);
         Route::resource('admin/order-delivered', App\Http\Controllers\Management\OrderController::class);
         Route::post('admin/get-order-detail',[App\Http\Controllers\Management\OrderController::class, 'getOrderDetail']);
-
+        Route::get('admin/print-view/{id}',[App\Http\Controllers\Management\OrderController::class, 'printView']);
         // Colors
         Route::resource('admin/colors', App\Http\Controllers\Management\ColorController::class);
-
-
-        });
+});
   
 
 

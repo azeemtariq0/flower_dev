@@ -547,6 +547,11 @@ function getProductByCategory(categoryId,subCategoryId=null) {
 }
 
 
+$(document).on('change','.lang-change',function(){
+    var url = "{{ route('lang.change') }}";
+    let lang_code = $(this).val();
+     window.location.href = url + "?lang="+ lang_code;
+});
 </script>
 
 

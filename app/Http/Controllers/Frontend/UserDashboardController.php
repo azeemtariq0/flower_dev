@@ -256,6 +256,10 @@ class UserDashboardController extends Controller
     public function checkout(Request $request)
     {
 
+        $data['languages'] = DefaultLanguage::AllLanguage();
+        $data_languages = DefaultLanguage::SelectedLanguage();
+        $language = DefaultLanguage::GetSegment(app()->getLocale());
+
        $cart = session()->get('cart');
       if(empty($cart)){
         return redirect('/');
@@ -309,7 +313,7 @@ class UserDashboardController extends Controller
                 "id" => $product->id,
                 "name" => $product->product_name,
                 "quantity" => 1,
-                "price" => 300,// $product->price,
+                "price" => $product->sell_price,
                 "image" => $product->image
             ];
         }

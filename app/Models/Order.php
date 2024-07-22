@@ -33,7 +33,7 @@ class Order extends Model
     ];
 
     
-     public function product_detail(){
+     public function order_detail(){
       return $this->hasMany(OrderDetail::class, 'OrderId', 'id');
    }
 

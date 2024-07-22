@@ -38,7 +38,7 @@
 <!-- GG FONT -->
 <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
-{{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> --}}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous"> 
 
     <style>
         .nav-logo {
@@ -125,17 +125,17 @@
                             </figure>
                         </li>
                         <li class=" menu-home">
-                            <a href="{{ url('/') }}" id="home-menu">Home</a>
+                            <a href="{{ url('/') }}" id="home-menu">{{ __('text.home') }}</a>
                         </li>
 
-                        <li class="menu-category"><a href="{{ url('/category/1') }}">Products</a>
+                        <li class="menu-category"><a href="{{ url('/category/1') }}">{{ __('text.products') }}</a>
                         </li>
 
                      
-                        <li class="menu-aboutus"><a href="{{ route('frontend.about') }}">About Us</a>
+                        <li class="menu-aboutus"><a href="{{ route('frontend.about') }}">{{ __('text.about_us') }}</a>
                         </li>
 
-                        <li class="menu-aboutus"><a href="{{ route('frontend.contact') }}">Contact Us</a>
+                        <li class="menu-aboutus"><a href="{{ route('frontend.contact') }}">{{ __('text.Contact_us') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -183,6 +183,14 @@
                     </li>
                     <li id="input-search" class="hidden-sm hidden-xs">
                         <a href="#"><i class="fa-regular fa-magnifying-glass " style="font-size:1.9rem;color:black"></i></a>
+                    </li>
+
+                    <li  class="hidden-xs" >
+                        <select  class="form-control lang-change"  >
+                            @foreach($languages as $id => $lang)
+                            <option {{  (session()->get('lang_code')==$lang->language_code) ? "selected" : "" }} value="{{ $lang->language_code }}" > <i class="fa-regular fa-world" ></i> {{ $lang->language_name }}</option>
+                            @endforeach
+                        </select>
                     </li>
                 </ul>
             </div>

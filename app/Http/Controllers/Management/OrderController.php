@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\faqs;
 use App\Helpers\DefaultLanguage;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\media;
 use Illuminate\Http\Request;
 use DB;
@@ -30,7 +31,13 @@ class OrderController extends Controller
             ->addIndexColumn()
             ->addColumn('action', function($row){
                  $btn="";
-              
+
+                 if (auth()->user()->haspermissionTo('order-view') ){
+                    $btn.="<button class='btn btn-warning btn-xs' type='button' onclick='orderDetail(".$row->id.")'><i class='fa fa-eye'></i></button>";
+                 }
+                  
+                 $btn.="<a target='_blank' href='".url('admin/print-view/'.$row->id)."'><button class='btn btn-success btn-xs' type='button'><i class='fa fa-print'></i></button></a>";
+
                  // if (auth()->user()->haspermissionTo('order-edit') )
                  //    $btn .=htmlBtn('order.edit',$row->id);
                  // if (auth()->user()->haspermissionTo('order-delete') )
@@ -53,6 +60,21 @@ class OrderController extends Controller
         $status=['orders'=>1,'order-confirm'=>2,'order-dispatch'=>3,'order-delivered'=>4];
 
         return view('management/orders/index', compact('data','status'));
+    }
+
+
+    public function getOrderDetail(Request $request){
+
+       $data  = OrderDetail::with('product')->where('orderId', $request->id)->get()->toArray();
+       echo json_encode(['success'=>true,'data'=>$data]);
+
+    }
+
+
+
+    public function printView(Request $request,$id){
+       $data  = Order::with('order_detail','order_detail.product')->where('id', $request->id)->first();
+       return view('management.orders.print', compact('data'));
     }
 
 

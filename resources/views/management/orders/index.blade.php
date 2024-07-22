@@ -153,8 +153,8 @@
                      $html+="<tr>";
                      $html+="<td>"+val.product.product_name+"</td>";
                      $html+="<td>"+val.ItemQty+"</td>";
-                     $html+="<td>200</td>";
-                     $html+="<td>400</td>";
+                     $html+="<td>"+val.price+"</td>";
+                     $html+="<td>"+( val.ItemQty * val.price )+"</td>";
                      $html+="</tr>";
                    })
                    $('#detail').html($html);

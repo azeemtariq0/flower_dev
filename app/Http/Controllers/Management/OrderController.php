@@ -35,6 +35,8 @@ class OrderController extends Controller
                  if (auth()->user()->haspermissionTo('order-view') ){
                     $btn.="<button class='btn btn-warning btn-xs' type='button' onclick='orderDetail(".$row->id.")'><i class='fa fa-eye'></i></button>";
                  }
+
+                 $btn.="<button class='btn btn-primary btn-xs' type='button' onclick='updateStatus(".$row->id.")'><i class='fa fa-pencil'></i> </button>";
                   
                  $btn.="<a target='_blank' href='".url('admin/print-view/'.$row->id)."'><button class='btn btn-success btn-xs' type='button'><i class='fa fa-print'></i></button></a>";
 

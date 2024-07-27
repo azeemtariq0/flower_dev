@@ -94,7 +94,7 @@
 
     </style>
 </head>
-<body>
+<body dir="{{ (session()->get('lang_code')!='1r') ? 'ltr' : 'rtl' }}">
 
     <header style="top:0px;height: 30px;width:100%;background:#8D1D3D !important;font-size:1.3rem;color:rgba(255, 255, 255, 0.863);display:flex;justify-content:center; align-items:center;position:fixed;z-index:99999 !important;">
         🌸 Welcome to Yasmin Flowers! Enjoy free shipping on all orders over $50! 🌸
@@ -196,7 +196,5 @@
             </div>
         </div>
     </header>
-   
-
 
 

@@ -23,6 +23,9 @@ class OrderDetail extends Model
                   'Status'
     ];
 
+  public function product(){
+    return $this->hasOne(Product::class, 'id', 'ItemId');
+  }
     
     
 

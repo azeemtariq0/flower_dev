@@ -54,7 +54,9 @@ class UserDashboardController extends Controller
 
     public function singleProduct($id){
 
-        
+        $data['languages'] = DefaultLanguage::AllLanguage();
+        $data_languages = DefaultLanguage::SelectedLanguage();
+        $language = DefaultLanguage::GetSegment(app()->getLocale());
         $data['product'] = Product::where('id',$id)->first();
         $data['related_products'] = Product::where('product_sub_category_id',$data['product']['sub_category'])->limit(8)->get();
 

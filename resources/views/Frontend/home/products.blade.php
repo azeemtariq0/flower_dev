@@ -4,7 +4,8 @@
 
 <style>
     
-    .item-pagination {
+
+.item-pagination {
   font-family: Montserrat-Regular;
   font-size: 13px;
   color: #808080;
@@ -32,17 +33,14 @@
    
 
 
-    <div class="container banner" >
-        <figure id="banner-figure" style="margin-top: 100px;"><a href="#"><img src="{{ asset('flower/img/slide.png') }}" class="img-responsive" alt="img-holiwood" width="100%"></a></figure>
+    <div class="container" >
+        <figure id="banner-figure" style="margin-top: 142px;"><a href="#"><img src="{{ asset('flower/img/slide.png') }}" class="img-responsive" alt="img-holiwood" width="100%"></a></figure>
         <div class="text-banner">
             
         </div>
     </div>
     <div class="container content">
-        <div class="row">
-            
-            
-            
+        <div class="row">    
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-8 col-md-6 col-sm-6 col-xs-6 show-side">
                     <button class="sp1 hidden-sm hidden-xs">Show Sidebar</button>
@@ -53,22 +51,15 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 show-select">
                     <span class="hidden-xs">Show</span>
-                        <select id="select-show">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                          <option>6</option>
-                          <option>7</option>
-                          <option>8</option>
-                          <option>9</option>
+                        <select id="select-show" class="select">
+                          <option value="12">12</option>
+                          <option value="18">18</option>
+                          <option value="30">30</option>
                         </select>
                     
-                    <select id="select-defaul">
-                          <option>Defaul sorting</option>
-                          <option>Defaul sorting</option>
-                          <option>Defaul sorting</option>
+                    <select id="select-default" class="select">
+                          <option value="produc_name">Product Name</option>
+                          <option value="sell_price">Price</option>
                         </select>
                 </div>
             </div>

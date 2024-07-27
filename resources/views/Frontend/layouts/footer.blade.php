@@ -482,6 +482,8 @@ function getresult1(url,c='',s='') {
     datas['pagination_setting'] =$("#pagination-setting").val();
     datas['catId'] =c;
     datas['SubCatId'] =s;
+    datas['ordering'] =$("#select-default option:selected").val();
+    datas['limit'] = $('#select-show option:selected').val();
 
    $("#product_list").html('');
     $.ajax({

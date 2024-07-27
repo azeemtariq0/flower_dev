@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+
+    const  UPDATED_AT = "modified_date";
+    const  UPDATED_BY = "modified_by";
   
     /**
      * The attributes that are mass assignable.

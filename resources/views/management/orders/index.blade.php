@@ -60,7 +60,7 @@
 
 
 
-          <div id="myModal" class="modal fade" role="dialog">
+<div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -95,7 +95,7 @@
   </div>
 </div>
 
-          @endsection
+@endsection
 
 
 
@@ -165,5 +165,13 @@
 
 
              }
+
+
+
+  function updateStatus($id) {
+      var $id = $id;
+      swal('Do You Want to Change Status or this Order ?');    
+      
+  }
           </script>
           @endsection

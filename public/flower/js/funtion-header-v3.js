@@ -14,3 +14,15 @@ function scrollFunction() {
 
 };
 });
+
+
+
+
+// function langChange(obj){
+//     var url = "{{ route('lang.change') }}";
+//     let lang_code = $(obj).val();
+//      window.location.href = url + "?lang="+ lang_code;
+// }
+
+
+

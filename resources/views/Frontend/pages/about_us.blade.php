@@ -1,6 +1,7 @@
 @extends('Frontend.layouts.master')
 @section('content')
-<main>
+
+<main dir="{{ (session()->get('lang_code')=='en') ? 'ltr' : 'rtl' }}">
 	<div class="content-search">
 
                             <div class="container container-100">
@@ -15,7 +16,7 @@
                             
 </div>
 
-<div class="wellcome" style="margin-top: 200px;">
+<div class="wellcome" style="margin-top: 200px;" dir="{{ (session()->get('lang_code')=='en') ? 'ltr' : 'rtl' }}">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 text-well">
@@ -46,7 +47,7 @@ Services:<br>
 						<a href="#" id="link-sky2"></a>
 					</div>
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 img-well">
+			<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 img-well" dir="{{ (session()->get('lang_code')=='en') ? 'rtl' : 'ltr' }}">
 				<figure id="img-about"><a href="#"><img src="{{ asset('flower/img/slide.png') }}" alt="img-holiwood"></a></figure>
 			</div>
 		</div>
